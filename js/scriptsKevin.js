@@ -1,12 +1,27 @@
 console.log("Mi primer script");
 
-let primerNombre = "Kevin";
-let segundoNombre = "Lizandro";
-let apellidoPaterno = "Gasca";
-let apellidoMaterno = "Pérez";
+/*
+    Este escript debera calcular el RFC de una persona dada su informacion personal. 
+    Rules: 
+        1.- Primer Vocal del apellido Paterno   OK 
+        2.- Primera letra del apellido Materno  OK 
+        3.- Primera letra el primer Nombre
+            3.1.- Debera conciderar las excepciones de JOSE y de MARIA.     IN PROGRESS
+        4.- Debera Colocar la fecha de nacimiento en formato 'aaMMdd'.      TO DO
+        5.- DEBERA COLOCAR UNA X si el acronimo formula las siguiente palabras 
+            - PENE
+            - CULO 
+            - CACA
+ */
 
-let fechaNacimiento = "01/11/2002"; 
-const userRfc = "GAPK021101"
+let primerNombre = "Enrique";
+let segundoNombre = "";
+let apellidoPaterno = "Peña";
+let apellidoMaterno = "Nieto";
+
+let fechaNacimiento = "19/07/1990"; 
+
+const userRfc = "PENX900719"
 
 let concatenarUno = primerNombre + " " + segundoNombre;
 let concatenarDos =  `Mi RFC es: ${primerNombre} ${segundoNombre} ${apellidoPaterno} ${apellidoMaterno}`;
@@ -39,7 +54,8 @@ let rfcCalculado = apellidoPaterno.substr(0,2)
 ///
 rfcCalculado = rfcCalculado.toUpperCase();
 
-console.log(rfcCalculado);
+console.log("RFC calculado: " + rfcCalculado);
+console.log("RFC user: " + userRfc);
 
-// console.log()
+console.log(rfcCalculado == userRfc);
 
