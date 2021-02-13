@@ -14,14 +14,65 @@ console.log("Mi primer script");
             - CACA
  */
 
-let primerNombre = "Enrique";
-let segundoNombre = "";
-let apellidoPaterno = "Peña";
-let apellidoMaterno = "Nieto";
+let primerNombre = "MAria";
+let segundoNombre = "Kevin";
+let apellidoPaterno = "Gasca";
+let apellidoMaterno = "Pérez";
+let fechaNacimiento = "01/11/2002"; 
+const rfcEsperado = "GAPK021101"
 
-let fechaNacimiento = "19/07/1990"; 
 
-const userRfc = "PENX900719"
+let nombreFinal;
+
+if (primerNombre.toUpperCase() == "JOSE") {
+    
+    nombreFinal = segundoNombre; 
+    
+} else if(primerNombre.toUpperCase() == "MARIA") {
+  
+  nombreFinal = segundoNombre;
+} else {
+    nombreFinal = primerNombre;
+}
+
+///
+///  Se extrajeron y concatenaron caracteres de los datos para hacer un RFC   
+///
+let rfcCalculado = apellidoPaterno.substr(0,2)
+                    + apellidoMaterno.substr(0,1) 
+                    + nombreFinal.substr(0,1)
+                    + fechaNacimiento.substr(8,2)
+                    + fechaNacimiento.substr(3,2)
+                    + fechaNacimiento.substr(0,2);
+
+///
+///   se utiliza la función .toUpperCase para convertir todo en mayusculas 
+///   
+rfcCalculado = rfcCalculado.toUpperCase();
+
+///  
+///   en el primer console.log imprime el rfc calculado con los datos que tienes
+///   en el segundo console.log imprime el rfcEsperado 
+///   En el tercer console.log compara los resultados y te dice si esta bien 
+console.log("RFC calculado: " + rfcCalculado);
+console.log("RFC user: " + rfcEsperado);
+console.log(rfcCalculado == rfcEsperado);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let concatenarUno = primerNombre + " " + segundoNombre;
 let concatenarDos =  `Mi RFC es: ${primerNombre} ${segundoNombre} ${apellidoPaterno} ${apellidoMaterno}`;
@@ -37,25 +88,3 @@ let concatenarTres  =  concatenarUno + concatenarDos;
   
 // console.log("(5,7): "    + fechaNacimiento.substr(3,2));   
 // console.log("(1,4): "    + fechaNacimiento.substr(0,2));   
-
-
-///
-///  Se extrajeron y concatenaron caracteres de los datos para hacer un RFC   
-///
-let rfcCalculado = apellidoPaterno.substr(0,2)
-                    + apellidoMaterno.substr(0,1) 
-                    + primerNombre.substr(0,1)
-                    + fechaNacimiento.substr(8,2)
-                    + fechaNacimiento.substr(3,2)
-                    + fechaNacimiento.substr(0,2);
-
-///
-///   se utiliza la función .toUpperCase para convertir todo en mayusculas 
-///
-rfcCalculado = rfcCalculado.toUpperCase();
-
-console.log("RFC calculado: " + rfcCalculado);
-console.log("RFC user: " + userRfc);
-
-console.log(rfcCalculado == userRfc);
-
